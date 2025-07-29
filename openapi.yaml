@@ -1,0 +1,28 @@
+openapi: 3.0.1
+info:
+  title: PowerAutomateGPT
+  version: 1.0.0
+paths:
+  https://prod-45.southeastasia.logic.azure.com:443/workflows/b5ef7af0fe1549219783de9f7d61f0b0/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=NY6gkFj1fVyUAWEXi1QBecRz9JFhGd3t2i6cmzP_pZg:
+    post:
+      summary: Call Power Automate flow
+      operationId: callFlow
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userMessage:
+                  type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  reply:
+                    type: string
